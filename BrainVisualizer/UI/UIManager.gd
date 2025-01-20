@@ -6,7 +6,6 @@ class_name UIManager
 
 
 var _brain_monitor # lol
-var _root_UI_view: UIView
 var _version_label: Label
 
 func _enter_tree():
@@ -18,7 +17,6 @@ func _enter_tree():
 func _ready():
 	_brain_monitor = $BrainMonitor
 	_version_label = $VersionLabel
-	_root_UI_view = $CB_Holder/UIView
 	
 	_version_label.text = Time.get_datetime_string_from_unix_time(BVVersion.brain_visualizer_timestamp)
 	
@@ -35,7 +33,6 @@ func _ready():
 #region FEAGI Interactions
 ## Called from above when we are about to reset genome, may want to clear some things...
 func FEAGI_about_to_reset_genome() -> void:
-	_root_UI_view.close_all_non_root_brain_region_views()
 	toggle_loading_screen(true)
 
 
@@ -54,9 +51,6 @@ func FEAGI_confirmed_genome() -> void:
 	var initial_tabs: Array[Control]
 
 
-	_root_UI_view.reset()
-	_root_UI_view.set_this_as_root_view()
-	_root_UI_view.setup_as_single_tab(initial_tabs)
 	toggle_loading_screen(false)
 	
 	# This is utter cancer
