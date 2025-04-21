@@ -141,10 +141,11 @@ func _process_user_input(bm_input_events: Array[UI_BrainMonitor_InputEvent_Abstr
 					else:
 						if bm_input_event.button == UI_BrainMonitor_InputEvent_Abstract.CLICK_BUTTON.MAIN:
 							
-							BV.UI.selection_system.select_objects(SelectionSystem.SOURCE_CONTEXT.UNKNOWN, arr_test)
-							BV.UI.selection_system.cortical_area_voxel_clicked(hit_parent_parent.cortical_area, neuron_coordinate_clicked)
+							#$BV.UI.selection_system.select_objects(SelectionSystem.SOURCE_CONTEXT.UNKNOWN, arr_test)
+							#BV.UI.selection_system.cortical_area_voxel_clicked(hit_parent_parent.cortical_area, neuron_coordinate_clicked)
 							#BV.UI.window_manager.spawn_quick_cortical_menu(arr_test)
 							#clicked_cortical_area.emit(hit_parent_parent.cortical_area)
+							pass
 			
 	
 	# Higlight what has been moused over (and unhighlight what hasnt) (this is slow but not really a problem right now)
