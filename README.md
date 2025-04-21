@@ -1,1 +1,0 @@
-# brain-visualizer-lite
